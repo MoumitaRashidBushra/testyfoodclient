@@ -6,7 +6,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
 
 
-    const { signIn } = useContext(AuthContext);
+    const { googleLogin, signIn } = useContext(AuthContext);
     const navigate = useNavigate();
 
 
@@ -19,6 +19,18 @@ const Login = () => {
 
 
         signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate('/')
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
@@ -48,7 +60,7 @@ const Login = () => {
                     <div className='text-center mt-2'>
                         <p className='font-bold'>Don't Have an Account?<button className="btn btn-outline  ms-2"><Link to='/register'>Register</Link></button> </p>
                         <h2 className='text-2xl font-bold mt-6'>Login With</h2>
-                        <button className="btn btn-outline  mt-3"><FaGoogle /> Login wth Google</button> <br />
+                        <button onClick={handleGoogleLogin} className="btn btn-outline  mt-3"><FaGoogle /> Login wth Google</button> <br />
                         <button className="btn btn-outline  mt-4"><FaGithub /> Login with Github</button>
                     </div>
                 </div>
