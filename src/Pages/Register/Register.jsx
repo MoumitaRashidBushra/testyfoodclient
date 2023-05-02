@@ -1,14 +1,17 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
-    const { user, createUser } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
 
     const handleRegister = event => {
         event.preventDefault();
+        setError('');
         const form = event.target;
         const name = form.name.value;
         const photo = form.photo.value;
@@ -16,14 +19,22 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, photo, email, password)
 
+        if (!/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/.test(password)) {
+            setError('Please add eight characters at least one uppercase letter, one lowercase letter, and one number or special character');
+            return;
+        }
+
 
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                setError('')
+                navigate('/')
             })
             .catch(error => {
-                console.log(error);
+                console.log(error.message);
+                setError(error.message);
             })
     }
 
@@ -48,6 +59,8 @@ const Register = () => {
 
                         <label for="password">Password:</label> <br />
                         <input className='mt-1 w-72 lg:w-full mb-4 px-2 py-2' type="password" id="password" name="password" required /><br />
+
+                        <p className='text-red-500'>{error}</p>
 
                         <input className='mt-4 w-72 lg:w-full mb-8 px-1 py-1 border border-black font-bold text-2xl' type="submit" value="Register" id="submit" name="submit" required /><br />
                     </form>

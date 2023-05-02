@@ -1,7 +1,16 @@
-import React from 'react';
-import { FaThumbsUp } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
+
+import AllChef from './AllChef/AllChef';
 
 const Home = () => {
+    const [allChefs, setAllChefs] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/allChef')
+            .then(response => response.json())
+            .then(data => setAllChefs(data))
+
+    }, [])
     return (
         <div>
             <section>
@@ -24,80 +33,15 @@ const Home = () => {
 
             <section>
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-10 lg:container lg:mx-auto px-5 lg:px-20 lg:pt-12 mb-12'>
-                    <div className="card w-full bg-base-100 shadow">
-                        <figure className='pt-4 px-4 '><img className='rounded-lg' src="https://img.freepik.com/free-photo/happy-young-cook-uniform-showing-thumbs-up_171337-5330.jpg?w=740&t=st=1683009798~exp=1683010398~hmac=77d02563937dd1cd60832b11a95576e0a6c160ee9f076a00dc59d028a836451a" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title font-semibold text-4xl text-center">Ranveer Brar</h2>
-                            <p><span className='font-semibold'> Experience:</span> 10 year</p>
-                            <div className='flex justify-between gap-8 items-center '>
-                                <div>
-                                    <p><span className='font-semibold'> Special recipes:</span> 100</p>
-                                </div>
-                                <div className='flex gap-2 items-center'>
-                                    <FaThumbsUp /> 100
-                                </div>
-                            </div>
 
-                            <div className="card-actions justify-start mt-1">
-                                <button className="btn btn-primary">View Recipes </button>
-                            </div>
-                        </div>
-                    </div>
+                    {
+                        allChefs.map(chefs => <AllChef
+                            key={chefs.id}
+                            chefs={chefs}
+                        ></AllChef>)
+                    }
 
-                    <div className="card w-full bg-base-100 shadow-xl">
-                        <figure><img src="https://img.freepik.com/free-photo/top-view-indian-food-assortment_23-2148747714.jpg?w=740&t=st=1682965272~exp=1682965872~hmac=63a7499caffd80ea53fed855bf619a40db092a8edb85a81b5c8fb119feb03d09" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="card w-full bg-base-100 shadow-xl">
-                        <figure><img src="https://img.freepik.com/free-photo/top-view-indian-food-assortment_23-2148747714.jpg?w=740&t=st=1682965272~exp=1682965872~hmac=63a7499caffd80ea53fed855bf619a40db092a8edb85a81b5c8fb119feb03d09" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="card w-full bg-base-100 shadow-xl">
-                        <figure><img src="https://img.freepik.com/free-photo/top-view-indian-food-assortment_23-2148747714.jpg?w=740&t=st=1682965272~exp=1682965872~hmac=63a7499caffd80ea53fed855bf619a40db092a8edb85a81b5c8fb119feb03d09" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="card w-full bg-base-100 shadow-xl">
-                        <figure><img src="https://img.freepik.com/free-photo/top-view-indian-food-assortment_23-2148747714.jpg?w=740&t=st=1682965272~exp=1682965872~hmac=63a7499caffd80ea53fed855bf619a40db092a8edb85a81b5c8fb119feb03d09" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="card w-full bg-base-100 shadow-xl">
-                        <figure><img src="https://img.freepik.com/free-photo/top-view-indian-food-assortment_23-2148747714.jpg?w=740&t=st=1682965272~exp=1682965872~hmac=63a7499caffd80ea53fed855bf619a40db092a8edb85a81b5c8fb119feb03d09" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </section>

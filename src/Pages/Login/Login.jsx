@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
+    const [error, setError] = useState('');
 
 
-    const { googleLogin, signIn } = useContext(AuthContext);
+    const { githubLogin, googleLogin, signIn } = useContext(AuthContext);
     const navigate = useNavigate();
 
 
@@ -22,6 +23,20 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                setError('')
+                navigate('/')
+            })
+            .catch(error => {
+                console.log(error.message);
+                setError(error.message);
+            })
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
                 navigate('/')
             })
             .catch(error => {
@@ -29,8 +44,9 @@ const Login = () => {
             })
     }
 
-    const handleGoogleLogin = () => {
-        googleLogin()
+
+    const handleGithubLogin = () => {
+        githubLogin()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
@@ -54,6 +70,8 @@ const Login = () => {
                         <label for="password">Password:</label> <br />
                         <input className='mt-1 w-72 lg:w-full mb-4 px-2 py-2' type="password" id="password" name="password" required /><br />
 
+                        <p className='text-red-500'>{error}</p>
+
                         <input className='mt-4 w-72 lg:w-full mb-8 px-1 py-1 border border-black font-bold text-2xl' type="submit" value="Login" id="submit" name="submit" required /><br />
 
                     </form>
@@ -61,7 +79,7 @@ const Login = () => {
                         <p className='font-bold'>Don't Have an Account?<button className="btn btn-outline  ms-2"><Link to='/register'>Register</Link></button> </p>
                         <h2 className='text-2xl font-bold mt-6'>Login With</h2>
                         <button onClick={handleGoogleLogin} className="btn btn-outline  mt-3"><FaGoogle /> Login wth Google</button> <br />
-                        <button className="btn btn-outline  mt-4"><FaGithub /> Login with Github</button>
+                        <button onClick={handleGithubLogin} className="btn btn-outline  mt-4"><FaGithub /> Login with Github</button>
                     </div>
                 </div>
 
