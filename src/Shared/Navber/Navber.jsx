@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import ActiveLink from '../../Pages/Home/ActiveLink/ActiveLink';
 
 const Navber = () => {
     const { user, logout } = useContext(AuthContext);
@@ -18,10 +19,9 @@ const Navber = () => {
                 </div>
 
                 <div >
-                    <Link to='/' className='me-5'>Home</Link >
-                    <Link to='statistics' className='me-5'>Statistics</Link >
-                    <Link to='job' className='me-5' >Applied Jobs</Link >
-                    <Link to='blog' className='me-5'>Blog</Link >
+                    <ActiveLink to='/' className='me-5'>Home</ActiveLink >
+                    <ActiveLink to='blog' className='me-5'>Blog</ActiveLink>
+
                 </div>
 
                 <div className='flex justify-between items-center flex-col  md:flex-row gap-4'>
