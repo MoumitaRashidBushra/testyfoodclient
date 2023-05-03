@@ -13,7 +13,7 @@ const Footer = () => {
                             <p class="font-bold">Quick Links</p>
                             <p class="mt-4">Home</p>
                             <p class="mt-3 mb-3">About Us</p>
-                            <p>Insurance</p>
+                            <p>Blog</p>
                             <p class="mt-3 mb-3">Privacy Policy</p>
                         </div>
 
@@ -31,6 +31,7 @@ const Footer = () => {
                             <p class="mt-3 mb-3">Contact Us</p>
 
                         </div>
+
 
 
 
