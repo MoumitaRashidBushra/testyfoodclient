@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ViewRecipeDetails = ({ r }) => {
 
     const { id, name, ingredients, cooking_method, picture } = r;
+
+    const [accepted, setAccepted] = useState(false)
+
+    const notify = () => {
+        setAccepted(toast("Wow!It's My favorite recipe "))
+    }
 
     return (
         <div>
@@ -31,9 +39,10 @@ const ViewRecipeDetails = ({ r }) => {
 
 
                     <div className="card-actions justify-start mt-1">
-                        <Link to={`/${id}`}>
-                            <button className="btn btn-primary">Favorite Recipes </button>
+                        <Link >
+                            <button disabled={accepted} onClick={notify} className="btn btn-primary ">Favorite Recipes </button>
                         </Link>
+                        <ToastContainer />
                     </div>
                 </div>
             </div>
