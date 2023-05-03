@@ -3,10 +3,13 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoutes = ({ children }) => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const location = useLocation();
     console.log(location)
 
+    if (loading) {
+        return <button className="btn btn-square loading"></button>
+    }
 
 
     if (user) {

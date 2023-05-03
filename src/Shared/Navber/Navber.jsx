@@ -26,7 +26,7 @@ const Navber = () => {
 
                 <div className='flex justify-between items-center flex-col  md:flex-row gap-4'>
                     {
-                        user && <div className="tooltip" data-tip={user?.displayName}>
+                        user && <div className="tooltip" data-tip={user?.name}>
                             <img className='w-16 rounded-full' src="https://img.freepik.com/free-photo/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction_176420-15187.jpg?w=740&t=st=1683023471~exp=1683024071~hmac=8e6ea5fbc73bd027c725087395e31196f600176ef4f30d27e32b572f15580742" />
                         </div>
                     }
