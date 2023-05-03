@@ -4,7 +4,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUser } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
@@ -30,6 +30,7 @@ const Register = () => {
                 const createdUser = result.user;
                 console.log(createdUser);
                 setError('')
+                updateUser(createdUser, name, photo)
                 navigate('/')
             })
             .catch(error => {
@@ -48,7 +49,7 @@ const Register = () => {
     return (
         <div className=' bg-slate-100'>
             <div className='lg:container lg:mx-auto px-5 lg:px-20 lg:pt-12 pb-12 pt-5 '>
-                <div className='border border-indigo-600 mx-auto lg:mx-60 px-8 lg:px-28 py-10 '>
+                <div className='border mx-auto lg:mx-60 px-8 lg:px-28 py-10 '>
                     <h1 className='text-center mb-4 font-bold text-3xl'>Please Register!!!</h1>
                     <form onSubmit={handleRegister}>
                         <label for="name">Name:</label> <br />

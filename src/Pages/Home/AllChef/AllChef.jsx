@@ -28,7 +28,7 @@ const AllChef = ({ chefs }) => {
 
                 <div className="card-actions justify-start mt-1">
                     <Link to={`/${id}`}>
-                        <button className="btn btn-primary">View Recipes </button>
+                        <button className="btn btn-info text-white">View Recipes </button>
                     </Link>
                 </div>
             </div>

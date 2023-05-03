@@ -40,7 +40,7 @@ const ViewRecipeDetails = ({ r }) => {
 
                     <div className="card-actions justify-start mt-1">
                         <Link >
-                            <button disabled={accepted} onClick={notify} className="btn btn-primary ">Favorite Recipes </button>
+                            <button disabled={accepted} onClick={notify} className="btn btn-info text-white ">Favorite Recipes </button>
                         </Link>
                         <ToastContainer />
                     </div>

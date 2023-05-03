@@ -19,10 +19,10 @@ const Footer = () => {
 
                         <div class="col mt-16 text-white  ">
                             <p class="font-bold">Our Service</p>
-                            <p class="mt-4">Life Insurance</p>
-                            <p class="mt-3 mb-3">Car Insurance</p>
-                            <p>Health Insurance</p>
-                            <p class="mt-3 mb-3">House Insurance</p>
+                            <p class="mt-4">Events</p>
+                            <p class="mt-3 mb-3">News</p>
+                            <p>Healthy Food</p>
+                            <p class="mt-3 mb-3">Delivery</p>
                         </div>
 
                         <div class="col mt-16 text-white ">

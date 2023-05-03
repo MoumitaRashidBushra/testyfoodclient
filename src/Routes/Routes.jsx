@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             {
                 path: ":id",
                 element: <PrivateRoutes><ViewRecipe></ViewRecipe></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allChef/${params.id}`)
+                loader: ({ params }) => fetch(`https://testy-food-hunter-server-moumitarashidbushra.vercel.app/allChef/${params.id}`)
 
             },
         ]

@@ -6,7 +6,7 @@ const Home = () => {
     const [allChefs, setAllChefs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allChef')
+        fetch('https://testy-food-hunter-server-moumitarashidbushra.vercel.app/allChef')
             .then(response => response.json())
             .then(data => setAllChefs(data))
 
@@ -31,6 +31,89 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+
+
+            <section>
+                <div className='lg:container lg:mx-auto px-5 lg:px-20 lg:pt-4 mb-2 pt-4'>
+                    <h1 className=' text-center text-4xl lg:text-5xl font-semibold text-black'> Recipe Categories  </h1>
+                    <p className='text-center pt-4 px-6'>Recipes are an essential part of cooking and can be a helpful guide for creating delicious and nutritious meals. Recipe categories can be a useful tool for organizing and finding recipes that fit specific dietary needs or preferences. </p>
+
+
+                    <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-10 pt-12 mb-24'>
+                        <div className="card w-full bg-slate-300 shadow">
+                            <div className="card-body">
+                                <h2 className="text-2xl font-semibold text-center">Appetizers!</h2>
+
+                            </div>
+
+                        </div>
+
+                        <div className="card w-full bg-slate-300 shadow">
+                            <div className="card-body">
+                                <h2 className="text-2xl font-semibold text-center">Main Dishes</h2>
+
+                            </div>
+
+                        </div>
+
+                        <div className="card w-full bg-slate-300 shadow">
+                            <div className="card-body">
+                                <h2 className="text-2xl font-semibold text-center">Side Dishes</h2>
+
+                            </div>
+
+                        </div>
+
+                        <div className="card w-full bg-slate-300 shadow">
+                            <div className="card-body">
+                                <h2 className="text-2xl font-semibold text-center">Desserts</h2>
+
+                            </div>
+
+                        </div>
+
+                        <div className="card w-full bg-slate-300 shadow">
+                            <div className="card-body">
+                                <h2 className="text-2xl font-semibold text-center">Beverages</h2>
+
+                            </div>
+
+                        </div>
+
+                        <div className="card w-full bg-slate-300 shadow">
+                            <div className="card-body">
+                                <h2 className="text-2xl font-semibold text-center">Breakfast</h2>
+
+                            </div>
+
+                        </div>
+
+                        <div className="card w-full bg-slate-300 shadow">
+                            <div className="card-body">
+                                <h2 className="text-2xl font-semibold text-center"> Low-carb</h2>
+
+                            </div>
+
+                        </div>
+
+                        <div className="card w-full bg-slate-300 shadow">
+                            <div className="card-body">
+                                <h2 className="text-2xl font-semibold text-center">Soups </h2>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                </div>
+            </section>
+
 
             <section>
                 <div className='lg:container lg:mx-auto px-5 lg:px-20 lg:pt-4 mb-2'>
@@ -57,6 +140,55 @@ const Home = () => {
 
                 </div>
             </section>
+
+            <section class=" container lg:container  lg:mx-auto px-12 lg:px-28 mt-28 mb-28">
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-12 ">
+
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-10 pt-12 mb-24'>
+
+                        <div>
+                            <img src="https://img.freepik.com/free-photo/selection-indian-food-including-chicken-curry-other-spices_1340-23307.jpg?w=740&t=st=1683142230~exp=1683142830~hmac=2d71d3089c9f2f063705f81a9a710ce901c6ad50c383011a852390eee5c624d0" alt="" />
+                        </div>
+
+                        <div>
+                            <img src="https://img.freepik.com/free-photo/indian-butter-chicken-black-bowl-black-background_123827-20757.jpg?w=740&t=st=1683141912~exp=1683142512~hmac=7a068321c2a3e43a8acce21ccb8c51083105919684b53d724861753b6cfea228" alt="" />
+                        </div>
+
+                        <div>
+                            <img src="https://img.freepik.com/free-photo/sandwich-with-chicken-burger-tomatoes-lettuce_2829-16584.jpg?w=740&t=st=1683100860~exp=1683101460~hmac=1eab70bc02da16fbe38af09a7290bd2a6318a71c6ad3ba5b5e9ddef3761ef935" alt="" />
+                        </div>
+                        <div>
+                            <img src="https://img.freepik.com/free-photo/lentil-salad-with-peppersonion-carrot-bowl-black-slate-background_123827-21265.jpg?w=740&t=st=1683097917~exp=1683098517~hmac=54dab928b85846a2b688d4da824f53ace34c0e4ac89a597415963ed641769a03" alt="" />
+                        </div>
+
+                    </div>
+
+
+                    <div>
+                        <h1 class="text-5xl font-bold">Subscribe to the best
+                            recipes feed. </h1>
+                        <div className="form-control text-center mt-6">
+
+                            <label className="input-group">
+                                <span>Email</span>
+                                <input type="text" placeholder="info@site.com" className="input input-bordered" />
+                            </label>
+                        </div>
+                        <p class="pt-7 pb-7">Food is essential to our existence. It provides us with the energy and nutrients needed for our bodies to function properly.  A balanced and nutritious diet can help prevent various chronic diseases, including heart disease, diabetes, and certain types of cancer. Nutrients found in fruits, vegetables, whole grains, and lean protein sources can help reduce the risk of these diseases.</p>
+
+                        <h4 class="font-bold">Unique Taste</h4>
+                        <p class="pt-1 pb-4">A Unique and different style from other teapots gives a luxurious and
+                            minimalist
+                            impression</p>
+                        <h4 class="font-bold">Premium Quality</h4>
+                        <p class="pt-2 pb-2">Premium Quality that makes tea more elegant and more durable when you use it.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+
         </div>
     );
 };

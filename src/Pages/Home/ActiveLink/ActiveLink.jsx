@@ -7,7 +7,7 @@ const ActiveLink = ({ to, children }) => {
             to={to}
             className={({ isActive }) =>
                 isActive
-                    ? "text-black font-bold me-5 ms-5" : ""
+                    ? "text-black font-bold me-5 ms-5" : " me-5 ms-5"
             }
 
         >

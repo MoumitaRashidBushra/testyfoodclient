@@ -10,11 +10,11 @@ const Blogs = () => {
 
         <div className='lg:container lg:mx-auto px-5 lg:px-20 lg:pt-10 mb-10' ref={ref}>
 
-            <Pdf targetRef={ref} filename="code-example.pdf">
+            <Pdf targetRef={ref} filename="code-example.pdf" >
                 {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
             </Pdf>
 
-            <h1 className='text-2xl'>What is the differences between uncontrolled and controlled components.?</h1>
+            <h1 className=' mt-4 text-2xl'>What is the differences between uncontrolled and controlled components.?</h1>
             <p className='pb-8 pt-1'>Controlled components are those in React that have their state and behavior managed by the parent component. The state and behavior of these components are updated by the props that are handed down from the parent component. Components that control their own state internally are known as uncontrolled components.In controlled component allows validation control one the other hand uncontrolled component does not allow validation control.Controlled component control better over the form elements and data .Uncontrolled component control limited  over the form elements and data. </p>
 
 
