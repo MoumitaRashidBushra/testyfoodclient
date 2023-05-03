@@ -19,12 +19,12 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, photo, email, password)
 
-        if (!/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/.test(password)) {
-            setError('Please add eight characters at least one uppercase letter, one lowercase letter, and one number or special character');
+        if (!/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/.test(password)) {
+
+            setError('Please add 9 characters at least one uppercase letter, one lowercase letter, and one number or special character');
             return;
         }
-
-
+        // else {
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
@@ -36,6 +36,12 @@ const Register = () => {
                 console.log(error.message);
                 setError(error.message);
             })
+
+        // }
+
+
+
+
     }
 
 

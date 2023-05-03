@@ -6,6 +6,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPages";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ViewRecipe from "../Pages/Home/ViewRecipe/ViewRecipe";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: ":id",
-                element: <ViewRecipe></ViewRecipe>,
+                element: <PrivateRoutes><ViewRecipe></ViewRecipe></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:5000/allChef/${params.id}`)
 
             },
