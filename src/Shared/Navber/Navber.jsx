@@ -13,7 +13,7 @@ const Navber = () => {
     }
     return (
         <div className=' bg-slate-100'>
-            <div className='flex justify-between items-center flex-col  md:flex-row  lg:container lg:mx-auto  lg:px-20 lg:pt-8 '>
+            <div className='flex justify-between items-center flex-col  md:flex-row  lg:container lg:mx-auto  lg:px-20 lg:pt-8 pb-6 '>
                 <div>
                     <a className="btn btn-ghost normal-case text-2xl font-extrabold">Testy Food</a>
                 </div>
