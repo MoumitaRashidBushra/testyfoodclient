@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 const ViewRecipeDetails = ({ r }) => {
 
-    const { id, name, ingredients, cooking_method } = r;
+    const { id, name, ingredients, cooking_method, picture } = r;
 
     return (
         <div>
             <div className="card w-full bg-base-100 shadow">
-                <figure className='pt-4 px-4 '><img className='rounded-lg' src="https://img.freepik.com/free-photo/top-view-indian-food-assortment_23-2148747714.jpg?w=740&t=st=1682965272~exp=1682965872~hmac=63a7499caffd80ea53fed855bf619a40db092a8edb85a81b5c8fb119feb03d09" alt="Shoes" /></figure>
+                <figure className='pt-4 px-4 '><img className='rounded-lg' src={picture} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title font-semibold text-4xl text-center">{name}</h2>
                     <p><span className='font-semibold pt-3'> Ingredients:</span>{

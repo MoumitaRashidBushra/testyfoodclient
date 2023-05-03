@@ -66,7 +66,7 @@ const ViewRecipe = () => {
 
             </div>
 
-            <section>
+            <section className=''>
                 <div className='lg:container lg:mx-auto px-5 lg:px-20 lg:pt-1 pb-20 '>
                     <h1 className=' text-center text-4xl lg:text-5xl font-semibold text-black'> Chef's Special Recipes</h1>
 
